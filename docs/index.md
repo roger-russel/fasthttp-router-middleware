@@ -55,9 +55,9 @@ func main() {
   router := router.New()
   router.GET("/", exampleRequestHandler)
   router.GET("/protected", middleware.Apply([]middleware.Middleware{
-      exampleAuthFunc,
-      exampleRuleFunc,
-    }, exampleRequestHandler))
+    exampleAuthFunc,
+    exampleRuleFunc,
+  }, exampleRequestHandler))
 
   ...
 
