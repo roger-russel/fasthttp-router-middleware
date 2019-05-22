@@ -1,15 +1,71 @@
 # Fasthttp Router Middleware
 
-## USAGE
+[![CircleCI](https://circleci.com/gh/roger-russel/fasthttp-router-middleware.svg?style=shield)](https://circleci.com/gh/roger-russel/fasthttp-router-middleware) [![codecov](https://codecov.io/gh/roger-russel/fasthttp-router-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/roger-russel/fasthttp-router-middleware) [![Software License](https://img.shields.io/badge/license-Apache-brightgreen.svg?style=flat-square)](LICENSE.md)
 
+## Usage
 
+There is two usages of this Ondemand and a created group.
 
-## DEV
+### Ondemand
 
-* [Solid](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design), please adapt class to package and let it go;
-* [Golang Standards Project Layout](https://github.com/golang-standards/project-layout) will used as folders organizations;
+Ondemand you just put yours middlewares per route like the example bellow.
+There is a working example of this [here](./doc/examples/ondemand) with its tests.
 
+```go
 
-# Thanks @Hanjm
+import "github.com/roger-russel/fasthttp-router-middleware/pkg/middleware"
 
-I learn a lot on [this another middleware project](https://github.com/hanjm/fasthttpmiddleware) for fasthttp please take a look there too.
+func exampleAuthFunc(ctx *fasthttp.RequestCtx) bool { ... }
+func exampleRuleFunc(ctx *fasthttp.RequestCtx) bool { ... }
+func exampleRequestHandler(ctx *fasthttp.RequestCtx) { ... }
+
+func main() {
+
+  ...
+
+	router := router.New()
+	router.GET("/", exampleRequestHandler)
+	router.GET("/protected", middleware.Apply([]middleware.Middleware{exampleAuthFunc, exampleRuleFunc}, exampleRequestHandler))
+
+  ...
+
+}
+
+```
+
+### Middleware Groups
+
+Middleware grous allow you to create a group of meiddlewares and reuse it into many routes that you like.
+There is a working example of this [here](./doc/examples/group) with its tests.
+
+```go
+
+import "github.com/roger-russel/fasthttp-router-middleware/pkg/middleware"
+
+func exampleAuthFunc(ctx *fasthttp.RequestCtx) bool { ... }
+func exampleRuleFunc(ctx *fasthttp.RequestCtx) bool { ... }
+func exampleRequestHandler(ctx *fasthttp.RequestCtx) { ... }
+
+func main() {
+
+  ...
+
+  midGroupAuth = middleware.New([]middleware.Middleware{exampleAuthFunc, exampleRuleFunc})
+
+	router := router.New()
+	router.GET("/", exampleRequestHandler)
+  router.GET("/protected", midGroupAuth(exampleRequestHandler))
+
+  ...
+
+}
+
+```
+
+## Contribute Guide
+
+Please take a look at [Contribute Guide](./doc/contributing.md).
+
+## Thanks
+
+* @Hanjm, I learn a lot on [his middleware project](https://github.com/hanjm/fasthttpmiddleware) for fasthttp please take a look there too.

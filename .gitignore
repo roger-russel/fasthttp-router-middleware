@@ -12,5 +12,5 @@
 *.out
 
 vendor
-system.cov
+coverage.txt
 coverage.html
