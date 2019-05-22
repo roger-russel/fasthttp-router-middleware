@@ -9,7 +9,7 @@ It's possible create a group of middlewares and use it per routes, or apply midd
 ### Middleware Groups
 
 Middleware grous allow you to create a group of meiddlewares and reuse it into many routes that you like.
-There is a working example of this [here](./docs/examples/group) with its tests.
+There is a working example of this [here](https://github.com/roger-russel/fasthttp-router-middleware/blob/master/docs/examples/group) with its tests.
 
 ```go
 
@@ -38,7 +38,7 @@ func main() {
 ### On demand
 
 Ondemand you just put yours middlewares per route like the example bellow.
-There is a working example of this [here](./docs/examples/ondemand) with its tests.
+There is a working example of this [here](https://github.com/roger-russel/fasthttp-router-middleware/blob/master/docs/examples/ondemand) with its tests.
 
 ```go
 
@@ -64,7 +64,7 @@ func main() {
 
 ## Contribute Guide
 
-Please take a look at [Contribute Guide](./docs/contributing.md).
+Please take a look at [Contribute Guide](https://github.com/roger-russel/fasthttp-router-middleware/blob/master/docs/contributing.md).
 
 ## Thanks
 
