@@ -4,34 +4,7 @@
 
 ## Usage
 
-There is two usages of this Ondemand and a created group.
-
-### Ondemand
-
-Ondemand you just put yours middlewares per route like the example bellow.
-There is a working example of this [here](./doc/examples/ondemand) with its tests.
-
-```go
-
-import "github.com/roger-russel/fasthttp-router-middleware/pkg/middleware"
-
-func exampleAuthFunc(ctx *fasthttp.RequestCtx) bool { ... }
-func exampleRuleFunc(ctx *fasthttp.RequestCtx) bool { ... }
-func exampleRequestHandler(ctx *fasthttp.RequestCtx) { ... }
-
-func main() {
-
-  ...
-
-	router := router.New()
-	router.GET("/", exampleRequestHandler)
-	router.GET("/protected", middleware.Apply([]middleware.Middleware{exampleAuthFunc, exampleRuleFunc}, exampleRequestHandler))
-
-  ...
-
-}
-
-```
+It's possible create a group of middlewares and use it per routes, or apply middlewares on demand.
 
 ### Middleware Groups
 
@@ -55,6 +28,33 @@ func main() {
 	router := router.New()
 	router.GET("/", exampleRequestHandler)
   router.GET("/protected", midGroupAuth(exampleRequestHandler))
+
+  ...
+
+}
+
+```
+
+### On demand
+
+Ondemand you just put yours middlewares per route like the example bellow.
+There is a working example of this [here](./doc/examples/ondemand) with its tests.
+
+```go
+
+import "github.com/roger-russel/fasthttp-router-middleware/pkg/middleware"
+
+func exampleAuthFunc(ctx *fasthttp.RequestCtx) bool { ... }
+func exampleRuleFunc(ctx *fasthttp.RequestCtx) bool { ... }
+func exampleRequestHandler(ctx *fasthttp.RequestCtx) { ... }
+
+func main() {
+
+  ...
+
+	router := router.New()
+	router.GET("/", exampleRequestHandler)
+	router.GET("/protected", middleware.Apply([]middleware.Middleware{exampleAuthFunc, exampleRuleFunc}, exampleRequestHandler))
 
   ...
 
