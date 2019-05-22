@@ -25,8 +25,8 @@ func main() {
 
   midGroupAuth = middleware.New([]middleware.Middleware{exampleAuthFunc, exampleRuleFunc})
 
-	router := router.New()
-	router.GET("/", exampleRequestHandler)
+  router := router.New()
+  router.GET("/", exampleRequestHandler)
   router.GET("/protected", midGroupAuth(exampleRequestHandler))
 
   ...
@@ -52,9 +52,12 @@ func main() {
 
   ...
 
-	router := router.New()
-	router.GET("/", exampleRequestHandler)
-	router.GET("/protected", middleware.Apply([]middleware.Middleware{exampleAuthFunc, exampleRuleFunc}, exampleRequestHandler))
+  router := router.New()
+  router.GET("/", exampleRequestHandler)
+  router.GET("/protected", middleware.Apply([]middleware.Middleware{
+      exampleAuthFunc,
+      exampleRuleFunc,
+    }, exampleRequestHandler))
 
   ...
 

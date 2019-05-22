@@ -3,7 +3,7 @@
 How contribute with this project is very easy.
 
 1. Open a Issue with a full description with what is wanted to be done.
-2. Start codding with an IDE which can use "editorconf".
+2. Start codding with an IDE which can use "editorconfig".
 3. Use our standards.
 4. Follow Solid and Golang Stand Projects.
 5. After finished your code, please send a pull request to master.
