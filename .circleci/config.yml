@@ -1,0 +1,30 @@
+version: 2
+
+jobs:
+  test:
+    docker:
+      - image: circleci/golang:1.10
+
+    working_directory: /go/src/github.com/roger-russel/fasthttp-router-middleware
+    steps:
+      - checkout
+
+      - run:
+          name: Installing Dep
+          command: |
+            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+
+      - run:
+          name: Installing Dependencies
+          command: |
+            make packages
+
+      - run:
+          name: Running Tests
+          command: |
+            make test
+
+      - run:
+          name: Sending Covarege Report
+          command: |
+            bash <(curl -s https://codecov.io/bash)
