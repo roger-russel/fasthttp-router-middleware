@@ -4,7 +4,7 @@
 
 ## Usage
 
-It's possible create a group of middlewares and use it per routes, or apply middlewares on demand.
+It's possible to create a group of middlewares and use it per routes, or apply middlewares on demand.
 
 ### Middleware Groups
 
