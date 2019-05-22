@@ -71,4 +71,4 @@ Please take a look at [Contribute Guide](https://github.com/roger-russel/fasthtt
 
 ## Thanks
 
-* @Hanjm, I learn a lot on [his middleware project](https://github.com/hanjm/fasthttpmiddleware) for fasthttp please take a look there too.
+* @Hanjm, I learn a lot on [(his|her) middleware project](https://github.com/hanjm/fasthttpmiddleware) for fasthttp please take a look there too.
