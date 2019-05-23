@@ -1,6 +1,6 @@
 # Fasthttp Router Middleware
 
-[![CircleCI](https://circleci.com/gh/roger-russel/fasthttp-router-middleware.svg?style=shield)](https://circleci.com/gh/roger-russel/fasthttp-router-middleware) [![codecov](https://codecov.io/gh/roger-russel/fasthttp-router-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/roger-russel/fasthttp-router-middleware) [![Software License](https://img.shields.io/badge/license-Apache-brightgreen.svg?style=flat-square)](LICENSE.md) [![Maintainability](https://api.codeclimate.com/v1/badges/5d2405a6a435dd84f861/maintainability)](https://codeclimate.com/github/roger-russel/fasthttp-router-middleware/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/5d2405a6a435dd84f861/test_coverage)](https://codeclimate.com/github/roger-russel/fasthttp-router-middleware/test_coverage)
+[![CircleCI](https://circleci.com/gh/roger-russel/fasthttp-router-middleware.svg?style=shield)](https://circleci.com/gh/roger-russel/fasthttp-router-middleware) [![codecov](https://codecov.io/gh/roger-russel/fasthttp-router-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/roger-russel/fasthttp-router-middleware) [![Software License](https://img.shields.io/badge/license-Apache-brightgreen.svg?style=flat-square)](LICENSE.md) [![Maintainability](https://api.codeclimate.com/v1/badges/5d2405a6a435dd84f861/maintainability)](https://codeclimate.com/github/roger-russel/fasthttp-router-middleware/maintainability)
 
 ## Usage
 
